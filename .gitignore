@@ -3,3 +3,6 @@ obj/
 Publish/
 Publish
 .vs/
+.dotnet/
+.dotnet-home/
+.nuget-packages/

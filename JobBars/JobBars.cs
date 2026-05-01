@@ -16,6 +16,9 @@ using System;
 
 namespace JobBars {
     public unsafe partial class JobBars : IDalamudPlugin {
+        private const string CommandName = "/miobars";
+        private const string LegacyCommandName = "/jobbars";
+
         public static Configuration Configuration { get; private set; }
         public static NodeBuilder NodeBuilder { get; private set; }
         public static GaugeManager GaugeManager { get; private set; }
@@ -167,9 +170,14 @@ namespace JobBars {
         // ======= COMMANDS ============
 
         private void SetupCommands() {
-            Dalamud.CommandManager.AddHandler( "/jobbars", new CommandInfo( OnCommand ) {
-                HelpMessage = $"Open config window for VFXEditor",
+            Dalamud.CommandManager.AddHandler( CommandName, new CommandInfo( OnCommand ) {
+                HelpMessage = "Open config window for MioBars",
                 ShowInHelp = true
+            } );
+
+            Dalamud.CommandManager.AddHandler( LegacyCommandName, new CommandInfo( OnCommand ) {
+                HelpMessage = "Open config window for MioBars",
+                ShowInHelp = false
             } );
         }
 
@@ -183,7 +191,8 @@ namespace JobBars {
         }
 
         public static void RemoveCommands() {
-            Dalamud.CommandManager.RemoveHandler( "/jobbars" );
+            Dalamud.CommandManager.RemoveHandler( CommandName );
+            Dalamud.CommandManager.RemoveHandler( LegacyCommandName );
         }
     }
 }

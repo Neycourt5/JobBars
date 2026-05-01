@@ -15,18 +15,18 @@ namespace JobBars {
         private readonly InfoBox<JobBars> RequiresRestartInfoBox = new() {
             Label = "Requires Restart",
             ContentsAction = ( JobBars item ) => {
-                if( ImGui.Checkbox( "Use 4K textures##JobBars_Settings", ref Configuration.Use4K ) ) {
+                if( ImGui.Checkbox( "Use 4K textures##MioBars_Settings", ref Configuration.Use4K ) ) {
                     Configuration.Save();
                 }
 
                 ImGui.SetNextItemWidth( 200f );
-                if( DrawCombo( ValidAttachTypes, Configuration.AttachAddon, "Gauge/Buff/Cursor UI element", "##JobBars_Settings", out var newAttach ) ) {
+                if( DrawCombo( ValidAttachTypes, Configuration.AttachAddon, "Gauge/Buff/Cursor UI element", "##MioBars_Settings", out var newAttach ) ) {
                     Configuration.AttachAddon = newAttach;
                     Configuration.Save();
                 }
 
                 ImGui.SetNextItemWidth( 200f );
-                if( DrawCombo( ValidAttachTypes, Configuration.CooldownAttachAddon, "Cooldown UI element", "##JobBars_Settings", out var newCDAttach ) ) {
+                if( DrawCombo( ValidAttachTypes, Configuration.CooldownAttachAddon, "Cooldown UI element", "##MioBars_Settings", out var newCDAttach ) ) {
                     Configuration.CooldownAttachAddon = newCDAttach;
                     Configuration.Save();
                 }
@@ -58,9 +58,9 @@ namespace JobBars {
             if( !Dalamud.ClientState.IsLoggedIn ) return;
             if( !Visible ) return;
 
-            var _ID = "##JobBars_Settings";
+            var _ID = "##MioBars_Settings";
             ImGui.SetNextWindowSize( new Vector2( 600, 1000 ), ImGuiCond.FirstUseEver );
-            if( ImGui.Begin( "JobBars Settings", ref Visible ) ) {
+            if( ImGui.Begin( "MioBars Settings", ref Visible ) ) {
                 RequiresRestartInfoBox.Draw( this );
 
                 DisplayWarning();

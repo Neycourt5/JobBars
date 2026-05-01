@@ -1,4 +1,4 @@
-# JobBars
+# MioBars
 [![Download count](https://img.shields.io/endpoint?url=https%3A%2F%2Fvz32sgcoal.execute-api.us-east-1.amazonaws.com%2FJobBars)](https://github.com/0ceal0t/JobBars)
 
 A plugin for [XIVQuickLauncher](https://github.com/goatcorp/FFXIVQuickLauncher) which provides extra job gauges, a party buff tracker, and more.
@@ -26,7 +26,7 @@ https://user-images.githubusercontent.com/18051158/130377610-86fb7e17-9780-4827-
 https://user-images.githubusercontent.com/18051158/130377598-2398d33a-9c0c-4d0c-8fd7-4187451a7e56.mp4
 
 ## Usage
-To open the settings menu, use `/jobbars`. When changing icon positions on your hotbars, you may need to switch to a different job and then back to update the icon displays.
+To open the settings menu, use `/miobars`. The legacy `/jobbars` command still works. When changing icon positions on your hotbars, you may need to switch to a different job and then back to update the icon displays.
 
 ## Why?
 The goal of this project is to augment the existing UI by displaying information in a more convenient format. It is not meant to be a complete overhaul, or to replace existing job gauges. If you personally only find certain parts useful, every gauge/buff/mitigation/etc. can be enabled and disabled individually.
