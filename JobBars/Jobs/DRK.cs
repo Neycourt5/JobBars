@@ -109,6 +109,12 @@ namespace JobBars.Jobs {
                 Triggers = [
                     new IconBuffTriggerStruct { Trigger = new Item(BuffIds.LivingDead), Duration = 10 }
                 ]
+            }),
+            new IconBuffReplacer(UiHelper.Localize(BuffIds.TheBlackestNight), new IconBuffProps {
+                Icons = [ActionIds.TheBlackestNight],
+                Triggers = [
+                    new IconBuffTriggerStruct { Trigger = new Item(BuffIds.TheBlackestNight), Duration = 7 }
+                ]
             })
         };
 
